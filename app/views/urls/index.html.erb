@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'form' %>
+
+<h1>Shortened URLs</h1>
+
+<table>
+  <tbody>
+    <% @urls.each do |url| %>
+      <tr>
+        <td><%= link_to slugged_url(url.slug), slugged_url(url.slug), target: :_blank %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @urls %>
